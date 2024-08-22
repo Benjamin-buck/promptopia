@@ -1,3 +1,6 @@
+// Check out Next-Auth documentation for reasons for the functions below.
+
+
 // might have to remove the /next if it doesn't work
 import NextAuth from "next-auth/next";
 import GoogleProvider from 'next-auth/providers/google';
