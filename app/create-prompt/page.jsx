@@ -13,7 +13,28 @@ const CreatePrompt = () => {
   });
 
   const createPrompt = async (e) => {
+    e.preventDefault(); // prevents the browser from reloading the form when submitted by default
+    setSubmitting(true);
 
+    try {
+      // fetching from an API we create
+      const response = await fetch('/api/prompt/new', {
+        method: 'POST',
+        body: JSON.stringify({
+          prompt: post.prompt,
+          userId: session?.user.id,
+          tag: post.tag,
+        })
+      })
+
+      if(response.ok) {
+        router.push('/');
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setSubmitting(false);
+    }
   }
   return (
     <Form
