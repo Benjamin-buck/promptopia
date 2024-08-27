@@ -3,6 +3,7 @@ const nextConfig = {
     experimental: {
       appDir: true,
       serverComponentsExternalPackages: ["mongoose"],
+      missingSuspenseWithCSRBailout: false,
     },
     images: {
       domains: ['lh3.googleusercontent.com'],
@@ -16,10 +17,5 @@ const nextConfig = {
     }
   }
   
-  module.exports = {
-    experimental: {
-      missingSuspenseWithCSRBailout: false,
-    },
-  }
   
   export default nextConfig
